@@ -1,14 +1,8 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContact } from "../contact";
 
 export default function Contact() {
-  const contact = {
-    first: "Sonu",
-    last: "Ram",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "Twitter",
-    notes: "Hello World!",
-    favorite: true,
-  };
+  const contact = useLoaderData();
 
   return (
     <div id="contact">
@@ -73,4 +67,8 @@ function Favorite({ contact }) {
       </button>
     </Form>
   );
+}
+
+export function loader({ params }) {
+  return getContact(params.contactId);
 }
