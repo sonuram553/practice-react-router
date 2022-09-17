@@ -1,5 +1,5 @@
 import { Outlet, Link, useLoaderData, Form } from "react-router-dom";
-import { getContacts, createContact } from "../contact";
+import { getContacts, createContact } from "../contacts";
 
 export default function Root() {
   const { contacts } = useLoaderData();
